@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>unity之UGUI基础 | ‘祈止’</title><meta name="keywords" content="unity,技术， UGUI"><meta name="author" content="‘祈止’"><meta name="copyright" content="‘祈止’"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="unity之UGUI基础"><meta name="application-name" content="unity之UGUI基础"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="unity之UGUI基础"><meta property="og:url" content="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/index.html"><meta property="og:site_name" content="‘祈止’"><meta property="og:description" content="CanvasCanvas（画布）是UI的基础，创建Canvas时也会自动创建一个EventSystem用于处理UI交互事件。 Canvas持有的组件如下： Rect Transform是Transform的特殊实现，用于所有UI元素。 根组件：没有预制锚点，面板灰色无法控制。 子组件：有预制锚地，面"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="‘祈止’"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="CanvasCanvas（画布）是UI的基础，创建Canvas时也会自动创建一个EventSystem用于处理UI交互事件。 Canvas持有的组件如下： Rect Transform是Transform的特殊实现，用于所有UI元素。 根组件：没有预制锚点，面板灰色无法控制。 子组件：有预制锚地，面"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>unity之UGUI基础 | ‘祈止’</title><meta name="keywords" content="unity,技术， UGUI"><meta name="author" content="‘祈止’"><meta name="copyright" content="‘祈止’"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="unity之UGUI基础"><meta name="application-name" content="unity之UGUI基础"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="unity之UGUI基础"><meta property="og:url" content="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/index.html"><meta property="og:site_name" content="‘祈止’"><meta property="og:description" content="CanvasCanvas（画布）是UI的基础，创建Canvas时也会自动创建一个EventSystem用于处理UI交互事件。 Canvas持有的组件如下： Rect Transform是Transform的特殊实现，用于所有UI元素。 根组件：没有预制锚点，面板灰色无法控制。  子组件：有预制锚地，"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="‘祈止’"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="CanvasCanvas（画布）是UI的基础，创建Canvas时也会自动创建一个EventSystem用于处理UI交互事件。 Canvas持有的组件如下： Rect Transform是Transform的特殊实现，用于所有UI元素。 根组件：没有预制锚点，面板灰色无法控制。  子组件：有预制锚地，"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   linkPageTop: undefined,
   peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
   postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
@@ -55,12 +55,12 @@
   configTitle: '‘祈止’',
   title: 'unity之UGUI基础',
   postAI: '',
-  pageFillDescription: 'Canvas, Rect Transform, Anchors, Base, Canvas, Render Mode, Additional Shader Channels, Vertex Color Always In Gamma Color Space画布是的基础创建时也会自动创建一个用于处理交互事件持有的组件如下是的特殊实现用于所有元素根组件没有预制锚点面板灰色无法控制子组件有预制锚地面白正常可以控制会更具的设置而改变局部坐标等同于的定义矩形的宽度和高度锚点子物体可以使用预制确定锚点值较小的位置确地锚点值较大的位置旋转轴控制物件的旋转轴和中心值代表百分比物件的坐标点控制物件选择角度控制缩放特别的是由四个小三角形组成的用于锚定矩形相对其父物体的矩形的每个角对应一个小三角形矩形每个角与其对于的小三角形距离恒定也就是说当小三角形分开始矩形会跟随父类物体的伸缩产生对于的伸缩可以认为将矩形映射到一个父物体的矩形线点上注官方对于没有的说法这里便于表述我起了这个名字信息是物体的相对物体的的距离但可以分开分开后不基于计算而是基于边界因此信息存在四种情况锚点合为一体和当左边界相对左锚点偏移量相对右锚点偏移量两者共同控制宽度当上边界相对上锚点偏移量相对下锚点偏移量两者共同控制宽度组件用于修改画布设置渲染模式有以下屏幕空间叠加将元素直接渲染在屏幕上可以随屏幕大小自动调整屏幕空间摄像将放置在摄像机前可与物体产生深度遮挡关系因此受摄像机设置的影响世界空间画布像场景物体一样处于世界空间中作为物体渲染勾选后元素可与屏幕像素严格对齐但高分辨率或非整数倍缩放可能导致位置偏移用于控制多个的渲染前后顺序数值越小越先渲染在更下层指定渲染的目标显示器为着色器提供额外的顶点数据通道例如用于自定义特效顶点动画等顶点颜色始终在伽马色彩空间勾选后顶点颜色会始终以空间处理避免在色彩空间项目中出现颜色偏差',
+  pageFillDescription: 'Canvas, Rect Transform, Anchors, Base, Canvas, Render Mode, Additional Shader Channels, Vertex Color Always In Gamma Color Space, Canvas Scaler, UI Scale Mode, Reference Pixeis Per Unit, Graphic Raycaster, Canvas Renderer, Image, 基础属性, 遮罩与类型, Text(Text Mesh Pro), Text Input, Main Settings, Font, Color, Spacing, Alignment(对齐), Text Wrapping Mode（文本换行模式）, Overflow(溢出处理), Hx2FV Mapping(水平x2F垂直映射), Extra Settings, Toggle, Interactable, Transition, Color Tint, Sprite Swap, Animation, Navigation, Other, Toggle Group, Slider, Scrollbar（滚动条）, Scroll View, Button, Dropdown（下拉菜单）, InputField, Text Viewport, Text Component, Text, Input Field Settings, Control Settings, Events画布是的基础创建时也会自动创建一个用于处理交互事件持有的组件如下是的特殊实现用于所有元素根组件没有预制锚点面板灰色无法控制子组件有预制锚地面白正常可以控制会更具的设置而改变局部坐标等同于的定义矩形的宽度和高度锚点子物体可以使用预制确定锚点值较小的位置确地锚点值较大的位置旋转轴控制物件的旋转轴和中心值代表百分比物件的坐标点控制物件选择角度控制缩放特别的是由四个小三角形组成的用于锚定矩形相对其父物体的矩形的每个角对应一个小三角形矩形每个角与其对于的小三角形距离恒定也就是说当小三角形分开始矩形会跟随父类物体的伸缩产生对于的伸缩可以认为将矩形映射到一个父物体的矩形线点上注官方对于没有的说法这里便于表述我起了这个名字信息是物体的相对物体的的距离但可以分开分开后不基于计算而是基于边界因此信息存在四种情况锚点合为一体和当左边界相对左锚点偏移量相对右锚点偏移量两者共同控制宽度当上边界相对上锚点偏移量相对下锚点偏移量两者共同控制宽度组件用于修改画布设置渲染模式有以下屏幕空间叠加将元素直接渲染在屏幕上可以随屏幕大小自动调整屏幕空间摄像将放置在摄像机前可与物体产生深度遮挡关系因此受摄像机设置的影响世界空间画布像场景物体一样处于世界空间中作为物体渲染勾选后元素可与屏幕像素严格对齐但高分辨率或非整数倍缩放可能导致位置偏移用于控制多个的渲染前后顺序数值越小越先渲染在更下层指定渲染的目标显示器为着色器提供额外的顶点数据通道见内容例如用于自定义特效顶点动画等顶点颜色始终在伽马色彩空间勾选后顶点颜色会始终以空间处理避免在色彩空间项目中出现颜色偏差画布缩放器用于控制中元素的整体缩放固定像素保证像素大小不变缩放因子通过此因子对中所有元素进行比例调整其实就是一个全局的缩放倍率屏幕尺寸比例屏幕越大元素越大设置布局设计的分辨率如果屏幕分辨率较大界面会被放大如果当前分辨率比例不符合参考分辨率上面的用于缩放画布的模式用宽度或高度作为参考横向或纵向扩展画布会增加空白但保证全部显示横向或纵向裁剪画布不增加空白但无法完全显示当选择判断缩放是以宽度或高度上面的为参考还是介于两者之间固定物理大小保证元素的物理大小不变物理单位用于指定位置和尺寸当无法获取屏幕时使用此值用于计算精灵的物理尺寸时使用的默认特别的当组件选择模式时每单位用于生成位图的像素数用于文本等每单位参考像素定义一个单位对应的像素数量用于设置图形与射线检查之间的关系条目功能射线是否忽略反转的图形场景中那些物体可以阻挡射线确定哪些上的物体可以阻挡射线此组件用于渲染元素剔除透明元素当元素透明度值为时剔除物体不进行渲染流程基础属性图片来源必须导入为给图片涂上的颜色用于渲染图像的材质是否为射线检测的目标用于扩大射线检测的碰撞箱用于让小图标更容易被点到遮罩与类型是否可以被父类的组件遮罩直接拉伸容易导致边缘变形使用的网格用于不规则图标强制保持原始宽高比放置变形设置为原生尺寸将图形分为九宫格拉伸时只缩放中心区域保持边框不变勾选后填充中心否者只显示边框调整图像的像素密度重复平铺勾选后填充中心否者只显示边框调整图像的像素密度填充用于制作进度条冷却等等填充方式填充的起点填充量顺时针强制保持原始宽高比放置变形设置为原生尺寸启用从右到左排列文本文本样式是的字体资源基于有符号距离场技术能在任何分辨率下保持文字清晰对应字体的渲染材质控制着色发光外描边提供粗体斜体下划线删除线上标下表小型大写字母字体大小是否自动调整字体大小选择时指定自动调整的最小值单位是指定自动调整的最小值单位是指定调整的最大可接受字符宽度通过压缩字符使其更高通常值适用于数字行高文字主颜色材质中定义的任何颜色和纹理都会乘以此颜色未勾选用于给文字添加垂直水平颜色渐变未勾选若开启会忽略文本中的改变颜色的富文本标签选项功能字体间距字与字之间的距离词间距调整单词间距行间距段落间距对齐略文本换行模式决定何时换行溢出处理当前为表示文本超出文本框时会继续显示水平垂直映射按字符进行纹理映射每个字符独立渲染按行段落映射匹配宽高比两个只有一个可以选这个选项功能文字边距几何体排序在特殊情况下解决排版问题每个字符有一个矩形此为排序方式启用后顶点不再缩放变化使用缩放启用支持富文本标签启用为射线检测目标文本可以被父级组件遮罩启用时将作为转义字符使用显示文字底部表情回退当前字体不支持某个表情时自动使用系统字体指定精灵资源可以在文本中插入自定义图标样式资源表可预定义文本样式字体特性启动字体特性提高英文排版美观度额外内边距为文字生成但可能会被裁剪添加额外内边界以避免可互动是否可互动让按钮完全没有状态效果可以为每个单独状态选择颜色还可以设置淡入淡出的时间可以为每个状态设置自定义根据状态进行动画必须存在动画元件用于交互部分的图片默认状态的颜色高亮颜色未被选择时悬停按下时的颜色选中时的颜色禁用控件时的颜色不选中时颜色的系数所有颜色会乘以此系数以变得更亮状态转化需要的时间显示图片高亮时的图片按下时的图片选中时的图片禁用时的图片不选中时默认状态的动画触发器高亮的动画触发器按下时的动画触发器选中时的动画触发器禁用时的动画触发器自动创建一个和对应的动画片段横向水平导航竖向垂直导航自动推测导航显示无导航所有导航可视化选中后在场景里显示设置的导航效果默认下为选中的状态切换开关时的效果无淡入淡出勾选标记的图片该所属的组当开关变化时调用的传入布尔值将添加到中的中以将多个编为一个组组内的为单选按钮允许不选择所有的开关前半部分同上项目功能填充的图形控制手柄的图形滑动条的方向最小值最大值是否将滑动条限制在整数位滑动条的数值在编辑器中设置后作为默认值当开关变化时调用的传入数值浮点数滚动条上部同上述内容的将滚动条分成的数量要滚动的元素的引用支持水平滚动支持垂直滚动运动类型这是弹性模式下使用的弹跳量开启惯性减速率滚动灵敏度视口元素的引用可选的滚动条元素的引用是否在不需要时自动隐藏滚动条和视窗间的空间滚动条变化时触发传入二维向量同上按钮按下时执行的事件下拉菜单上半部同上下拉菜单的模版文本组件用于保存当前选中项的文本图片组件用于保存当前选中项的图片占位符没有选择时用于占位可以是文本或图片文本组件用于保存元素的文本图片组件用于保存元素的图片当前选项的索引是否多选透明淡出速度选项主颜色当选项变化时的事件文本显示区域文本组件显示文字的组件显示文本字体大小字符限制内容类型定义输入字符接受的字符类型行类型占位符无输入时的提示文本垂直滚动条插入点光标竖线闪烁速度光标竖线的宽度开启自定义光标竖线的颜色选择文字时的背景颜色获取焦点时全选文本停用时重置保持文本可见与上一项互斥按恢复应在选择时激活隐藏软键盘隐藏移动输入与上一项互斥只读模式富文本允许富文本编辑当数值变化时触发当编辑结束时触发当选择时触发当取消选择时触发',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2026-03-01 22:17:27',
+  postUpdate: '2026-03-18 22:51:24',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -203,11 +203,12 @@ setTimeout(function(){preloader.endLoading();},10000)
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">‘祈止’</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 文章</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><span> 关于</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/img/post/common/wech.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="/img/post/common/wech.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/post/common/wechi.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/img/post/common/wechi.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.05rem;">C#<sup>4</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>4</sup></a><a href="/tags/mod/" style="font-size: 1.05rem;">mod<sup>4</sup></a><a href="/tags/shader/" style="font-size: 1.05rem;">shader<sup>1</sup></a><a href="/tags/unity/" style="font-size: 1.05rem;">unity<sup>5</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem;">个人项目<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%83%B3/" style="font-size: 1.05rem;">学习感想<sup>1</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 1.05rem;">技术<sup>11</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" style="font-size: 1.05rem;">技术， UGUI<sup>1</sup></a><a href="/tags/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF/" style="font-size: 1.05rem;">胡闹厨房<sup>2</sup></a><a href="/tags/%E8%A7%84%E5%88%92/" style="font-size: 1.05rem;">规划<sup>1</sup></a><a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 1.05rem;">配置<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/unity/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>unity</span></a><a class="article-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>技术， UGUI</span></a></span></div></div><h1 class="post-title" itemprop="name headline">unity之UGUI基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-02-24T05:14:33.000Z" title="发表于 2026-02-24 13:14:33">2026-02-24</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-03-01T14:17:27.523Z" title="更新于 2026-03-01 22:17:27">2026-03-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/"><header><a href="/tags/unity/" tabindex="-1" itemprop="url">unity</a><a href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" tabindex="-1" itemprop="url">技术， UGUI</a><h1 id="CrawlerTitle" itemprop="name headline">unity之UGUI基础</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">‘祈止’</span><time itemprop="dateCreated datePublished" datetime="2026-02-24T05:14:33.000Z" title="发表于 2026-02-24 13:14:33">2026-02-24</time><time itemprop="dateCreated datePublished" datetime="2026-03-01T14:17:27.523Z" title="更新于 2026-03-01 22:17:27">2026-03-01</time></header><h1 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h1><p>Canvas（画布）是UI的基础，创建Canvas时也会自动创建一个EventSystem用于处理UI交互事件。</p>
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">‘祈止’</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 文章</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><span> 关于</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/img/post/common/wech.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="/img/post/common/wech.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/post/common/wechi.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/img/post/common/wechi.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.05rem;">C#<sup>4</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>4</sup></a><a href="/tags/mod/" style="font-size: 1.05rem;">mod<sup>4</sup></a><a href="/tags/shader/" style="font-size: 1.05rem;">shader<sup>1</sup></a><a href="/tags/unity/" style="font-size: 1.05rem;">unity<sup>5</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem;">个人项目<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%83%B3/" style="font-size: 1.05rem;">学习感想<sup>1</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 1.05rem;">技术<sup>11</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" style="font-size: 1.05rem;">技术， UGUI<sup>1</sup></a><a href="/tags/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF/" style="font-size: 1.05rem;">胡闹厨房<sup>2</sup></a><a href="/tags/%E8%A7%84%E5%88%92/" style="font-size: 1.05rem;">规划<sup>1</sup></a><a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 1.05rem;">配置<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/unity/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>unity</span></a><a class="article-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>技术， UGUI</span></a></span></div></div><h1 class="post-title" itemprop="name headline">unity之UGUI基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-02-24T05:14:33.000Z" title="发表于 2026-02-24 13:14:33">2026-02-24</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-03-18T14:51:24.746Z" title="更新于 2026-03-18 22:51:24">2026-03-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/"><header><a href="/tags/unity/" tabindex="-1" itemprop="url">unity</a><a href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" tabindex="-1" itemprop="url">技术， UGUI</a><h1 id="CrawlerTitle" itemprop="name headline">unity之UGUI基础</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">‘祈止’</span><time itemprop="dateCreated datePublished" datetime="2026-02-24T05:14:33.000Z" title="发表于 2026-02-24 13:14:33">2026-02-24</time><time itemprop="dateCreated datePublished" datetime="2026-03-18T14:51:24.746Z" title="更新于 2026-03-18 22:51:24">2026-03-18</time></header><h1 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h1><p>Canvas（画布）是UI的基础，创建Canvas时也会自动创建一个EventSystem用于处理UI交互事件。</p>
 <p>Canvas持有的组件如下：</p>
 <h2 id="Rect-Transform"><a href="#Rect-Transform" class="headerlink" title="Rect Transform"></a>Rect Transform</h2><p>是Transform的特殊实现，用于<strong>所有UI元素</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\qizhi\AppData\Roaming\Typora\typora-user-images\image-20260224133628187.png" alt="image-20260224133628187"><br><strong>根组件</strong>：没有预制锚点，面板灰色无法控制。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\qizhi\AppData\Roaming\Typora\typora-user-images\image-20260224141123800.png" alt="image-20260224141123800"><br><strong>子组件</strong>：有预制锚地，面白正常可以控制。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERluppsBP_EQOtUlbblfgRBkOWrOWEJAACVSEAAsVSgFWvvoccKGQa-joE.png" alt="BQACAgUAAyEGAASHRsPbAAERluppsBP_EQOtUlbblfgRBkOWrOWEJAACVSEAAsVSgFWvvoccKGQa-joE.png"><br><strong>根组件</strong>：没有预制锚点，面板灰色无法控制。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERluxpsBSP_oBW7hHUDL6sI_hha81FtwACVyEAAsVSgFUtkh6wnHVO-joE.png" alt="BQACAgUAAyEGAASHRsPbAAERluxpsBSP_oBW7hHUDL6sI_hha81FtwACVyEAAsVSgFUtkh6wnHVO-joE.png"></p>
+<p><strong>子组件</strong>：有预制锚地，面白正常可以控制。</p>
 <ul>
 <li><p>Base：(会更具Anchors的设置而改变)</p>
 <ul>
@@ -229,8 +230,7 @@ if (true) {
 </li>
 </ul>
 <h3 id="Anchors"><a href="#Anchors" class="headerlink" title="Anchors"></a>Anchors</h3><p>特别的，Anchors是由四个小三角形组成的，用于锚定UI矩形相对其<span style = "color : red">父物体</span>的Transform。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\qizhi\AppData\Roaming\Typora\typora-user-images\image-20260224194037236.png" alt="image-20260224194037236" style="zoom: 80%;" />
-
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERlu9psBS35AfA5O9oZJXhzgmUnRrMJAACWiEAAsVSgFVdJyVoYHcRlDoE.png" alt="BQACAgUAAyEGAASHRsPbAAERlu9psBS35AfA5O9oZJXhzgmUnRrMJAACWiEAAsVSgFVdJyVoYHcRlDoE.png"></p>
 <p>UI矩形的每个角对应一个“小三角形”，UI矩形每个角与其对于的小三角形距离恒定。</p>
 <p>也就是说，当小三角形分开始，矩形会跟随父类物体的伸缩产生对于的伸缩。可以认为Anchors将UI矩形映射到一个父物体的矩形（线&#x2F;点）上。</p>
 <h3 id="Base"><a href="#Base" class="headerlink" title="Base"></a>Base</h3><p>注：Unity官方对于rect transform没有base的说法。这里便于表述，我起了这个名字。</p>
@@ -240,7 +240,7 @@ if (true) {
 <li>当MinX ≠ MaxX：PosX -&gt; Left（UI左边界相对左锚点偏移量），width -&gt; Right（相对右锚点偏移量）两者共同控制宽度。</li>
 <li>当MinY ≠ MaxY：PosY -&gt; Top（UI上边界相对上锚点偏移量），height -&gt; Bottom（相对下锚点偏移量）两者共同控制宽度。</li>
 </ol>
-<h2 id="Canvas-1"><a href="#Canvas-1" class="headerlink" title="Canvas"></a>Canvas</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\qizhi\AppData\Roaming\Typora\typora-user-images\image-20260301215848150.png" alt="image-20260301215848150"></p>
+<h2 id="Canvas-1"><a href="#Canvas-1" class="headerlink" title="Canvas"></a>Canvas</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERlvNpsBThwHMvWzrdP7HMbs_cnrwYDwACXyEAAsVSgFUqE95CRBig_joE.png" alt="BQACAgUAAyEGAASHRsPbAAERlvNpsBThwHMvWzrdP7HMbs_cnrwYDwACXyEAAsVSgFUqE95CRBig_joE.png"></p>
 <p>Canvas组件用于修改画布设置。</p>
 <h3 id="Render-Mode"><a href="#Render-Mode" class="headerlink" title="Render Mode"></a>Render Mode</h3><p>渲染模式有以下：</p>
 <ul>
@@ -251,12 +251,671 @@ if (true) {
 <p><strong>Pixel Perfect</strong>：勾选后，UI元素可与屏幕像素严格对齐。但高分辨率或非整数倍缩放，可能导致UI位置偏移。</p>
 <p><strong>Sort Order</strong>：用于控制多个Canvas的渲染前后顺序，数值越小，越先渲染（在更下层）。</p>
 <p><strong>Target Display</strong>：指定Canvas渲染的目标显示器。</p>
-<h4 id="Additional-Shader-Channels"><a href="#Additional-Shader-Channels" class="headerlink" title="Additional Shader Channels"></a>Additional Shader Channels</h4><p>为 UI 着色器提供额外的顶点数据通道，例如用于自定义特效、顶点动画等。</p>
+<h4 id="Additional-Shader-Channels"><a href="#Additional-Shader-Channels" class="headerlink" title="Additional Shader Channels"></a>Additional Shader Channels</h4><p>为 UI 着色器提供额外的顶点数据通道（见unity Shaderlab内容），例如用于自定义特效、顶点动画等。</p>
 <ul>
 <li>Nothing</li>
 </ul>
 <h4 id="Vertex-Color-Always-In-Gamma-Color-Space"><a href="#Vertex-Color-Always-In-Gamma-Color-Space" class="headerlink" title="Vertex Color Always In Gamma Color Space"></a>Vertex Color Always In Gamma Color Space</h4><p>顶点颜色始终在伽马色彩空间</p>
 <p>勾选后，顶点颜色会始终以 Gamma 空间处理，避免在 Linear 色彩空间项目中出现颜色偏差。</p>
+<h2 id="Canvas-Scaler"><a href="#Canvas-Scaler" class="headerlink" title="Canvas Scaler"></a>Canvas Scaler</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERlvVpsBUBFY8AAf8UvzmMyf9YFxtrMIsAAmEhAALFUoBVcgtJukt03IM6BA.png" alt="BQACAgUAAyEGAASHRsPbAAERlvVpsBUBFY8AAf8UvzmMyf9YFxtrMIsAAmEhAALFUoBVcgtJukt03IM6BA.png"></p>
+<p>Canvas Scaler(画布缩放器)：用于控制Canvas中UI元素的整体缩放</p>
+<h3 id="UI-Scale-Mode"><a href="#UI-Scale-Mode" class="headerlink" title="UI Scale Mode"></a>UI Scale Mode</h3><ul>
+<li><p>Constant Pixel（固定像素）：保证像素大小不变</p>
+<ul>
+<li><p><strong>Scale Factor</strong></p>
+<p>Scale Factor（缩放因子）：通过此因子对Canvas中所有UI元素进行比例调整。</p>
+<p>其实就是一个全局的缩放倍率。</p>
+</li>
+</ul>
+</li>
+<li><p>Scale With Screen（屏幕尺寸比例）：屏幕越大，元素越大。</p>
+<ul>
+<li><p>Reference Resolution  x&#x2F;y：设置UI布局设计的分辨率，如果屏幕分辨率较大，界面会被放大。</p>
+</li>
+<li><p>Screen Match Mode：如果当前分辨率比例不符合参考分辨率（上面的x&#x2F;y），用于缩放画布的模式。</p>
+<ul>
+<li><p>Match Width or Height：用宽度或高度作为参考。</p>
+</li>
+<li><p>Expand：横向或纵向扩展画布。会增加空白，但保证全部显示。</p>
+</li>
+<li><p>Shrink：横向或纵向裁剪画布。不增加空白，但无法完全显示。</p>
+</li>
+</ul>
+</li>
+<li><p>Match：（当选择Match Width or Height）判断缩放是以宽度或高度（上面的x&#x2F;y）为参考，还是介于两者之间。</p>
+</li>
+</ul>
+</li>
+<li><p>Constant Physical Size（固定物理大小）：保证元素的物理大小不变。</p>
+<ul>
+<li>Physical Unit：物理单位，用于指定位置和尺寸。</li>
+<li>Fallback Screen DPI：当无法获取屏幕DPI时，使用此值。</li>
+<li>Default Sprite DPI：用于计算精灵的物理尺寸时，使用的默认DPI。</li>
+</ul>
+</li>
+</ul>
+<p>特别的，当Canvas组件选择World模式时：</p>
+<p><strong>Dynamic Pixels Per Unit</strong>：每单位用于生成位图的像素数。用于文本等。</p>
+<h3 id="Reference-Pixeis-Per-Unit"><a href="#Reference-Pixeis-Per-Unit" class="headerlink" title="Reference Pixeis Per Unit"></a>Reference Pixeis Per Unit</h3><p>每单位参考像素：定义一个unity单位对应的像素数量</p>
+<h2 id="Graphic-Raycaster"><a href="#Graphic-Raycaster" class="headerlink" title="Graphic Raycaster"></a>Graphic Raycaster</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERlvZpsBUjYskD7OnE05fTV2ZlZ0whLQACYiEAAsVSgFWGRgfcZ0Ek7ToE.png" alt="BQACAgUAAyEGAASHRsPbAAERlvZpsBUjYskD7OnE05fTV2ZlZ0whLQACYiEAAsVSgFWGRgfcZ0Ek7ToE.png"></p>
+<p>用于设置图形与射线检查之间的关系。</p>
+<table>
+<thead>
+<tr>
+<th>条目</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ignore Reversed Graphics</td>
+<td>射线是否忽略反转的图形</td>
+</tr>
+<tr>
+<td>Blocking Objects</td>
+<td>3D场景中那些物体可以阻挡射线</td>
+</tr>
+<tr>
+<td>Blocking Mask</td>
+<td>确定哪些Layer上的物体可以阻挡射线</td>
+</tr>
+</tbody></table>
+<h2 id="Canvas-Renderer"><a href="#Canvas-Renderer" class="headerlink" title="Canvas Renderer"></a>Canvas Renderer</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERlvdpsBVImyCP_uJKP1weBKOHJJy76wACZCEAAsVSgFXP6oSmFj9EQDoE.png" alt="BQACAgUAAyEGAASHRsPbAAERlvdpsBVImyCP_uJKP1weBKOHJJy76wACZCEAAsVSgFXP6oSmFj9EQDoE.png"></p>
+<p>此组件用于渲染UI元素</p>
+<p>Cull Transparent Mesh（剔除透明UI元素），当UI元素透明度alpha值为0时。剔除物体，不进行渲染流程。</p>
+<h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERlvhpsBVqflItnGoVxZ9pKDMS-S92jAACZSEAAsVSgFU6jgocOZplKzoE.png" alt="BQACAgUAAyEGAASHRsPbAAERlvhpsBVqflItnGoVxZ9pKDMS-S92jAACZSEAAsVSgFU6jgocOZplKzoE.png"></p>
+<h3 id="基础属性"><a href="#基础属性" class="headerlink" title="基础属性"></a>基础属性</h3><p>Source Image（图片来源）：必须导入为Sprite。</p>
+<p>Color：给图片涂上的颜色。</p>
+<p>Material：用于渲染图像的材质。</p>
+<p>Raycast Target：是否为射线检测的目标。</p>
+<p>Raycast Padding：用于扩大射线检测的碰撞箱，用于让小图标更容易被点到。</p>
+<h3 id="遮罩与类型"><a href="#遮罩与类型" class="headerlink" title="遮罩与类型"></a>遮罩与类型</h3><p>Maskable：是否可以被父类的Mask组件遮罩。</p>
+<p>Image Type：</p>
+<ul>
+<li><p>Simple：直接拉伸，容易导致边缘变形</p>
+<ul>
+<li>Use Sprite Mesh：使用Sprite的网格，用于不规则图标。</li>
+<li>Preserve Aspect：强制Image保持原始宽高比，放置变形。</li>
+<li>Set Native Size：设置为原生尺寸。</li>
+</ul>
+</li>
+<li><p>Sliced：将图形分为九宫格，拉伸时只缩放中心区域，保持边框不变。</p>
+<ul>
+<li>Fill Center ：勾选后填充中心，否者只显示边框。</li>
+<li>Pixels Per Unit Multiplier：调整图像的像素密度。</li>
+</ul>
+</li>
+<li><p>Tiled：重复平铺。</p>
+<ul>
+<li>Fill Center ：勾选后填充中心，否者只显示边框。</li>
+<li>Pixels Per Unit Multiplier：调整图像的像素密度。</li>
+</ul>
+</li>
+<li><p>Filled：填充，用于制作进度条，冷却等等。</p>
+<ul>
+<li>Fill Method：填充方式。</li>
+<li>Fill Origin：填充的起点。</li>
+<li>Fill Amount：填充量</li>
+<li>Clockwise：顺时针</li>
+<li>Preserve Aspect：强制Image保持原始宽高比，放置变形。</li>
+<li>Set Native Size：设置为原生尺寸。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Text-Text-Mesh-Pro"><a href="#Text-Text-Mesh-Pro" class="headerlink" title="Text(Text Mesh Pro)"></a>Text(Text Mesh Pro)</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERtCRptWIJJfIi8zFG9UtEUFfsz5relgACCSAAAkcKsFWVR1jbLpsjszoE.png" alt="BQACAgUAAyEGAASHRsPbAAERtCRptWIJJfIi8zFG9UtEUFfsz5relgACCSAAAkcKsFWVR1jbLpsjszoE.png"></p>
+<h3 id="Text-Input"><a href="#Text-Input" class="headerlink" title="Text Input"></a>Text Input</h3><p>Enable RTL Editor：启用从右到左排列文本。</p>
+<p><strong>Text Style</strong> ：文本样式</p>
+<h3 id="Main-Settings"><a href="#Main-Settings" class="headerlink" title="Main Settings"></a>Main Settings</h3><hr>
+<h3 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER1J5purk5fWSt9Z6iwMLqJ6ZOpjPaXQACtSEAAud12VVmAjb9Pvj9TToE.png" alt="BQACAgUAAyEGAASHRsPbAAER1J5purk5fWSt9Z6iwMLqJ6ZOpjPaXQACtSEAAud12VVmAjb9Pvj9TToE.png"></p>
+<p>Font Asset：是TMP的字体资源，基于<strong>有符号距离场</strong>(SDF)技术，能在任何分辨率下保持文字清晰。</p>
+<p>Material Preset：对应字体的渲染材质，控制着色、发光、外描边。</p>
+<p>Font Style：提供粗体（B）、斜体（I）、下划线（U）、删除线（S）、上标（ab）、下表（AB）、小型大写字母（SC）。</p>
+<p>Font Size：字体大小。</p>
+<p>​	Auto Size：是否自动调整字体大小。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>选择Auto Size时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Min</td>
+<td>指定自动调整的最小值。单位是points.</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>指定自动调整的最小值。单位是points.</td>
+</tr>
+<tr>
+<td>WD%</td>
+<td>指定调整的最大可接受字符宽度。TMP通过压缩字符使其更高，通常值适用于数字。</td>
+</tr>
+<tr>
+<td>Line</td>
+<td>行高。</td>
+</tr>
+</tbody></table>
+<h3 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER1KBpurmcD7BY3y3rHPkzTZaoM3lKEgACtyEAAud12VUCZ0rrfkJhJjoE.png" alt="BQACAgUAAyEGAASHRsPbAAER1KBpurmcD7BY3y3rHPkzTZaoM3lKEgACtyEAAud12VUCZ0rrfkJhJjoE.png"></p>
+<table>
+<thead>
+<tr>
+<th>Vertex Color</th>
+<th>文字主颜色，材质中定义的任何颜色和纹理都会乘以此颜色。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Color Gradient</strong></td>
+<td>未勾选，用于给文字添加垂直&#x2F;水平颜色渐变。</td>
+</tr>
+<tr>
+<td>Override Tag</td>
+<td>未勾选，若开启会忽略文本中的<strong>改变颜色</strong>的<strong>富文本</strong>标签。</td>
+</tr>
+</tbody></table>
+<h3 id="Spacing"><a href="#Spacing" class="headerlink" title="Spacing"></a>Spacing</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER1KNpurne7N_fxMNzIf8JCmwnb5HpGQACuiEAAud12VXdXFGCNrxniToE.png" alt="BQACAgUAAyEGAASHRsPbAAER1KNpurne7N_fxMNzIf8JCmwnb5HpGQACuiEAAud12VXdXFGCNrxniToE.png"></p>
+<p><strong>Spacing Options(em)</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Character</td>
+<td>字体间距，字与字之间的距离。</td>
+</tr>
+<tr>
+<td>Word</td>
+<td>词间距，调整单词间距。</td>
+</tr>
+<tr>
+<td>Line</td>
+<td>行间距。</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>段落间距</td>
+</tr>
+</tbody></table>
+<h3 id="Alignment-对齐"><a href="#Alignment-对齐" class="headerlink" title="Alignment(对齐)"></a>Alignment(对齐)</h3><p>略</p>
+<h3 id="Text-Wrapping-Mode（文本换行模式）"><a href="#Text-Wrapping-Mode（文本换行模式）" class="headerlink" title="Text Wrapping Mode（文本换行模式）"></a>Text Wrapping Mode（文本换行模式）</h3><p>决定何时换行。</p>
+<h3 id="Overflow-溢出处理"><a href="#Overflow-溢出处理" class="headerlink" title="Overflow(溢出处理)"></a>Overflow(溢出处理)</h3><p>当前为Overflow，表示文本超出文本框时会继续显示</p>
+<h3 id="H-V-Mapping-水平-垂直映射"><a href="#H-V-Mapping-水平-垂直映射" class="headerlink" title="H&#x2F;V Mapping(水平&#x2F;垂直映射)"></a>H&#x2F;V Mapping(水平&#x2F;垂直映射)</h3><p>Character：按字符进行纹理映射，每个字符独立渲染。</p>
+<p>Line&#x2F;Paragraph：按行&#x2F;段落映射。</p>
+<p><strong>Match Aspect</strong>：匹配宽高比，两个只有一个可以选这个。</p>
+<h3 id="Extra-Settings"><a href="#Extra-Settings" class="headerlink" title="Extra Settings"></a>Extra Settings</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER1KRpurpMr_Gwm1fJyJP-5iGq0ME5nAACuyEAAud12VV6y1N4TJoU5ToE.png" alt="BQACAgUAAyEGAASHRsPbAAER1KRpurpMr_Gwm1fJyJP-5iGq0ME5nAACuyEAAud12VV6y1N4TJoU5ToE.png"></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Margins</strong></td>
+<td>left&#x2F;top&#x2F;right&#x2F;bottom，文字边距。</td>
+</tr>
+<tr>
+<td>Geometry Sorting</td>
+<td>几何体排序，在特殊情况下解决排版问题。每个字符有一个矩形，此为排序方式。</td>
+</tr>
+<tr>
+<td>Is Scale Static</td>
+<td>启用后，顶点不再RectTransform 缩放变化。使用GPU缩放。</td>
+</tr>
+<tr>
+<td>Rich Text</td>
+<td>启用支持富文本标签。</td>
+</tr>
+<tr>
+<td>Raycast Target</td>
+<td>启用为射线检测目标。</td>
+</tr>
+<tr>
+<td>Maskable</td>
+<td>文本可以被父级Mask组件遮罩。</td>
+</tr>
+<tr>
+<td>Parse Escape Characters</td>
+<td>启用时，将“\”作为转义字符使用。</td>
+</tr>
+<tr>
+<td>Visible Descender</td>
+<td>显示文字底部。</td>
+</tr>
+<tr>
+<td>Emoji Fallback Support</td>
+<td>表情回退，当前字体不支持某个表情时，自动使用系统字体。</td>
+</tr>
+<tr>
+<td>Sprite Asset</td>
+<td>指定TMP精灵资源，可以在文本中插入自定义图标。</td>
+</tr>
+<tr>
+<td>Style Sheet Asset</td>
+<td>样式资源表，可预定义文本样式。</td>
+</tr>
+<tr>
+<td>Font Features</td>
+<td>字体特性。启动OpenType字体特性，提高英文排版美观度。</td>
+</tr>
+<tr>
+<td>Extra Padding</td>
+<td>额外内边距，TMP为文字生成sprites但可能会被裁剪，添加额外内边界以避免。</td>
+</tr>
+</tbody></table>
+<h2 id="Toggle"><a href="#Toggle" class="headerlink" title="Toggle"></a>Toggle</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERy3ZpuUxclV49L-TkWkKEvHJS7XO5UwACXCAAAl-80VVUmm4hJlPsVToE.png" alt="BQACAgUAAyEGAASHRsPbAAERy3ZpuUxclV49L-TkWkKEvHJS7XO5UwACXCAAAl-80VVUmm4hJlPsVToE.png"></p>
+<h3 id="Interactable"><a href="#Interactable" class="headerlink" title="Interactable"></a>Interactable</h3><p>可互动：是否可互动。</p>
+<h3 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h3><table>
+<thead>
+<tr>
+<th>None</th>
+<th>让按钮完全没有状态效果。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Color Tint</td>
+<td>可以为每个单独状态选择颜色，还可以设置淡入淡出的时间。</td>
+</tr>
+<tr>
+<td>Sprite Swap</td>
+<td>可以为每个状态设置自定义Sprite。</td>
+</tr>
+<tr>
+<td>Animation</td>
+<td>根据状态进行动画，必须存在动画元件。</td>
+</tr>
+</tbody></table>
+<h4 id="Color-Tint"><a href="#Color-Tint" class="headerlink" title="Color Tint"></a>Color Tint</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERy4dpuU9x5LS24sMGAUKgtjDHAQ5-EgACdSAAAl-80VX6CHZlcPAtTToE.png" alt="BQACAgUAAyEGAASHRsPbAAERy4dpuU9x5LS24sMGAUKgtjDHAQ5-EgACdSAAAl-80VX6CHZlcPAtTToE.png"></p>
+<table>
+<thead>
+<tr>
+<th>Target Graphic</th>
+<th>用于交互部分的图片。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Normal Color</td>
+<td>默认状态的颜色。</td>
+</tr>
+<tr>
+<td>Highlighted Color</td>
+<td>高亮颜色。未被选择时悬停。</td>
+</tr>
+<tr>
+<td>Pressed Color</td>
+<td>按下时的颜色。</td>
+</tr>
+<tr>
+<td>Selected Color</td>
+<td>选中时的颜色。</td>
+</tr>
+<tr>
+<td>Disabled Color</td>
+<td>禁用控件时的颜色。-&gt;<strong>Interactable</strong>不选中时。</td>
+</tr>
+<tr>
+<td>Color Multiplier</td>
+<td>颜色的系数，所有颜色会乘以此系数，以变得更亮。</td>
+</tr>
+<tr>
+<td>Fade Duration</td>
+<td>状态转化需要的时间。</td>
+</tr>
+</tbody></table>
+<h4 id="Sprite-Swap"><a href="#Sprite-Swap" class="headerlink" title="Sprite Swap"></a>Sprite Swap</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERy6JpuVHNapeSZaErhgKIfkyhlg-VlQACjyAAAl-80VXngrUYvD0y9zoE.png" alt="BQACAgUAAyEGAASHRsPbAAERy6JpuVHNapeSZaErhgKIfkyhlg-VlQACjyAAAl-80VXngrUYvD0y9zoE.png"></p>
+<table>
+<thead>
+<tr>
+<th>Target Graphic</th>
+<th>显示图片。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Highlighted Sprite</td>
+<td>高亮时的图片。</td>
+</tr>
+<tr>
+<td>Pressed Sprite</td>
+<td>按下时的图片。</td>
+</tr>
+<tr>
+<td>Selected Sprite</td>
+<td>选中时的图片。</td>
+</tr>
+<tr>
+<td>Disabled Sprite</td>
+<td>禁用时的图片。-&gt;<strong>Interactable</strong>不选中时。</td>
+</tr>
+</tbody></table>
+<h4 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERy7FpuVQ0wZiy04aXDui9B0lchgABrK4AArMgAAJfvNFV7X8qKsqRJMw6BA.png" alt="BQACAgUAAyEGAASHRsPbAAERy7FpuVQ0wZiy04aXDui9B0lchgABrK4AArMgAAJfvNFV7X8qKsqRJMw6BA.png"></p>
+<table>
+<thead>
+<tr>
+<th>Normal Trigger</th>
+<th>默认状态的动画触发器。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Highlighted Trigger</td>
+<td>高亮的动画触发器</td>
+</tr>
+<tr>
+<td>Pressed Trigger</td>
+<td>按下时的动画触发器</td>
+</tr>
+<tr>
+<td>Selected Trigger</td>
+<td>选中时的动画触发器</td>
+</tr>
+<tr>
+<td>Disabled Trigger</td>
+<td>禁用时的动画触发器</td>
+</tr>
+<tr>
+<td>Auto Generate Animation</td>
+<td><strong>自动创建一个 Animator Controller</strong> 和对应的动画片段</td>
+</tr>
+</tbody></table>
+<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERy8RpuVa1tSXscmRmPNKjhRUiScMovwACxiAAAl-80VWEhqU5G4RGCToE.png" alt="BQACAgUAAyEGAASHRsPbAAERy8RpuVa1tSXscmRmPNKjhRUiScMovwACxiAAAl-80VWEhqU5G4RGCToE.png"></p>
+<table>
+<thead>
+<tr>
+<th>Horizontal</th>
+<th>横向水平导航</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vertical</td>
+<td>竖向垂直导航</td>
+</tr>
+<tr>
+<td>Automatic</td>
+<td>自动推测导航</td>
+</tr>
+<tr>
+<td>Explicit</td>
+<td>显示</td>
+</tr>
+<tr>
+<td>None&#x2F;Everything</td>
+<td>无导航&#x2F;所有导航</td>
+</tr>
+</tbody></table>
+<p>Visualize：可视化，选中后在场景里显示设置的导航效果。</p>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERy9ZpuVlMDUT5glOXVtdZz23LiErX1gAC2iAAAl-80VWu9bz1T4UJMToE.png" alt="BQACAgUAAyEGAASHRsPbAAERy9ZpuVlMDUT5glOXVtdZz23LiErX1gAC2iAAAl-80VWu9bz1T4UJMToE.png"></p>
+<p>Is On：默认下为选中的状态。</p>
+<p>Toggle Transition：切换开关时的效果。</p>
+<p>​	None&#x2F;Fade：无&#x2F;淡入淡出。</p>
+<p>Graphic：勾选标记的图片。</p>
+<p>Group：该Toggle所属的Toggle组。</p>
+<p>On Value Changed：当开关变化时调用的UnityEvent，传入布尔值。</p>
+<h3 id="Toggle-Group"><a href="#Toggle-Group" class="headerlink" title="Toggle Group"></a>Toggle Group</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERzAABabldnmbBRNFHX_oHEmzYYhQbsl8AAhwhAAJfvNFVLQG61xuubGk6BA.png" alt="BQACAgUAAyEGAASHRsPbAAERzAABabldnmbBRNFHX_oHEmzYYhQbsl8AAhwhAAJfvNFVLQG61xuubGk6BA.png"></p>
+<p>将Toggle Group添加到Toggle中的Group中，以将多个Toggle编为一个组。组内的Toggle为单选按钮。</p>
+<p>Allow Switch Off：允许不选择所有的开关。</p>
+<h2 id="Slider"><a href="#Slider" class="headerlink" title="Slider"></a>Slider</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERz65pukAwwQTwkJ8dNHwl7EvA555UYQACkSAAAud10VWfoCcHLcxnFzoE.png" alt="BQACAgUAAyEGAASHRsPbAAERz65pukAwwQTwkJ8dNHwl7EvA555UYQACkSAAAud10VWfoCcHLcxnFzoE.png"></p>
+<p>前半部分同上Toggle。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fill Rect</td>
+<td>填充的图形</td>
+</tr>
+<tr>
+<td>Handle Rect</td>
+<td>控制手柄的图形</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>滑动条的方向</td>
+</tr>
+<tr>
+<td>Min Value&#x2F;Max Value</td>
+<td>最小值&#x2F;最大值</td>
+</tr>
+<tr>
+<td>Whole Numbers</td>
+<td>是否将滑动条限制在整数位</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>滑动条的数值，在编辑器中设置后作为默认值。</td>
+</tr>
+</tbody></table>
+<p><strong>On Value Changed</strong>：当开关变化时调用的UnityEvent，传入数值浮点数。</p>
+<h2 id="Scrollbar（滚动条）"><a href="#Scrollbar（滚动条）" class="headerlink" title="Scrollbar（滚动条）"></a>Scrollbar（滚动条）</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAERz9lpukSmbyHTfJasPjcl1YnDyo1kJgAC2CAAAud10VVHH7HLBdkoWToE.png" alt="BQACAgUAAyEGAASHRsPbAAERz9lpukSmbyHTfJasPjcl1YnDyo1kJgAC2CAAAud10VVHH7HLBdkoWToE.png"></p>
+<p>上部同上述内容的。</p>
+<p>Number Of Steps：将滚动条分成的数量 。</p>
+<h2 id="Scroll-View"><a href="#Scroll-View" class="headerlink" title="Scroll View"></a>Scroll View</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0kppumtHDT8CL2eJAYwUNQdd_eBwVQACpCMAAud10VUytdTWkzdzgjoE.png" alt="BQACAgUAAyEGAASHRsPbAAER0kppumtHDT8CL2eJAYwUNQdd_eBwVQACpCMAAud10VUytdTWkzdzgjoE.png"></p>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>要滚动的元素的引用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Horizontal</td>
+<td>支持水平滚动</td>
+</tr>
+<tr>
+<td>Vertical</td>
+<td>支持垂直滚动</td>
+</tr>
+<tr>
+<td>Movement Type</td>
+<td>运动类型（Unrestricted，Elastic，Clamped）</td>
+</tr>
+<tr>
+<td>–&gt; Elastic</td>
+<td>这是弹性模式下使用的弹跳量</td>
+</tr>
+<tr>
+<td>Inertia</td>
+<td>开启惯性</td>
+</tr>
+<tr>
+<td>–&gt; Deceleration Rate</td>
+<td>减速率</td>
+</tr>
+<tr>
+<td>Scroll Sensitivity</td>
+<td>滚动灵敏度</td>
+</tr>
+<tr>
+<td>Viewport</td>
+<td>视口元素的引用</td>
+</tr>
+<tr>
+<td>Horizontal（Vertical） Scrollbar</td>
+<td>可选的，滚动条元素的引用</td>
+</tr>
+<tr>
+<td>–&gt; Visibility</td>
+<td>是否在不需要时自动隐藏</td>
+</tr>
+<tr>
+<td>–&gt; Spacing</td>
+<td>滚动条和视窗间的空间</td>
+</tr>
+<tr>
+<td>On Value Changed（Vector2）</td>
+<td>滚动条变化时触发，传入二维向量。</td>
+</tr>
+</tbody></table>
+<h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0BtpukkkSVnjk82duylmjk8T11qz_wACMCEAAud10VVHHAxYpiZWHToE.png" alt="BQACAgUAAyEGAASHRsPbAAER0BtpukkkSVnjk82duylmjk8T11qz_wACMCEAAud10VVHHAxYpiZWHToE.png"></p>
+<p>同上。</p>
+<p>On Click()：按钮按下时执行的事件。</p>
+<h2 id="Dropdown（下拉菜单）"><a href="#Dropdown（下拉菜单）" class="headerlink" title="Dropdown（下拉菜单）"></a>Dropdown（下拉菜单）</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0CppuknuRTjrfYnAiUELKDB0KWzjKAACTCEAAud10VUKrKpQ4P8AAcs6BA.png" alt="BQACAgUAAyEGAASHRsPbAAER0CppuknuRTjrfYnAiUELKDB0KWzjKAACTCEAAud10VUKrKpQ4P8AAcs6BA.png"></p>
+<p>上半部同上。</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>下拉菜单的模版</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Caption Text</td>
+<td>文本组件，用于保存当前选中项的文本</td>
+</tr>
+<tr>
+<td>Caption Image</td>
+<td>图片组件，用于保存当前选中项的图片</td>
+</tr>
+<tr>
+<td>Placeholder</td>
+<td>占位符，没有选择时用于占位。可以是文本或图片。</td>
+</tr>
+<tr>
+<td>Item Text</td>
+<td>文本组件，用于保存元素的文本</td>
+</tr>
+<tr>
+<td>Item Image</td>
+<td>图片组件，用于保存元素的图片</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>当前选项的索引</td>
+</tr>
+<tr>
+<td>Multi Select</td>
+<td>是否多选</td>
+</tr>
+<tr>
+<td>Alpha Fade Speed</td>
+<td>透明淡出速度</td>
+</tr>
+</tbody></table>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0Gdpuk8vpwsX7AvsOmWld3mbarfYwQACkSEAAud10VW8yocvV7hapDoE.png" alt="BQACAgUAAyEGAASHRsPbAAER0Gdpuk8vpwsX7AvsOmWld3mbarfYwQACkSEAAud10VW8yocvV7hapDoE.png"></p>
+<p>Options：选项。</p>
+<p>​	text &#x2F; Sprite &#x2F; 主颜色</p>
+<p>On Value Changed(Int32)：当选项变化时的事件。</p>
+<h2 id="InputField"><a href="#InputField" class="headerlink" title="InputField"></a>InputField</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0I1pulKgccAJ_qTtRVusZUwXSO9MPwACuCEAAud10VWIN809BPNkzjoE.png" alt="BQACAgUAAyEGAASHRsPbAAER0I1pulKgccAJ_qTtRVusZUwXSO9MPwACuCEAAud10VWIN809BPNkzjoE.png"></p>
+<h3 id="Text-Viewport"><a href="#Text-Viewport" class="headerlink" title="Text Viewport"></a>Text Viewport</h3><p>文本显示区域，</p>
+<h3 id="Text-Component"><a href="#Text-Component" class="headerlink" title="Text Component"></a>Text Component</h3><p>文本组件，显示文字的组件。</p>
+<h3 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h3><p>显示文本</p>
+<h3 id="Input-Field-Settings"><a href="#Input-Field-Settings" class="headerlink" title="Input Field Settings"></a>Input Field Settings</h3><table>
+<thead>
+<tr>
+<th>Font Asset</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Point Size</td>
+<td>字体大小</td>
+</tr>
+<tr>
+<td>Character Limit</td>
+<td>字符限制</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>内容类型，定义输入字符接受的字符类型</td>
+</tr>
+<tr>
+<td>–&gt; Line Type</td>
+<td>行类型</td>
+</tr>
+<tr>
+<td>Piaceholder</td>
+<td>占位符，无输入时的提示文本</td>
+</tr>
+<tr>
+<td>Vertical Scrollbar</td>
+<td>垂直滚动条</td>
+</tr>
+<tr>
+<td>Caret Blink Rate</td>
+<td>插入点（光标竖线）闪烁速度</td>
+</tr>
+<tr>
+<td>Caret Width</td>
+<td>光标竖线的宽度</td>
+</tr>
+<tr>
+<td>Custom Caret Color</td>
+<td>开启自定义光标竖线的颜色</td>
+</tr>
+<tr>
+<td>Selection Color</td>
+<td>选择文字时的背景颜色</td>
+</tr>
+</tbody></table>
+<h3 id="Control-Settings"><a href="#Control-Settings" class="headerlink" title="Control Settings"></a>Control Settings</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0UlpulyGSNXss3eatLcDrK3EOpAWaQACiyIAAud10VWwXaHxmynq_zoE.png" alt="BQACAgUAAyEGAASHRsPbAAER0UlpulyGSNXss3eatLcDrK3EOpAWaQACiyIAAud10VWwXaHxmynq_zoE.png"></p>
+<table>
+<thead>
+<tr>
+<th>OnFocus - Select All</th>
+<th>获取焦点时，全选文本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Reset On Deactivation</td>
+<td>停用时重置</td>
+</tr>
+<tr>
+<td>–&gt; Keep Text Selection Visible</td>
+<td>保持文本可见，与上一项互斥</td>
+</tr>
+<tr>
+<td>Restore On ESC Key</td>
+<td>按ESC恢复</td>
+</tr>
+<tr>
+<td>Should Activate On Select</td>
+<td>应在选择时激活</td>
+</tr>
+<tr>
+<td>Hide Soft Keyboard</td>
+<td>隐藏软键盘</td>
+</tr>
+<tr>
+<td>–&gt; Hide Mobile Input</td>
+<td>隐藏移动输入，与上一项互斥</td>
+</tr>
+<tr>
+<td>Read Only</td>
+<td>只读模式</td>
+</tr>
+<tr>
+<td>Rich Text</td>
+<td>富文本</td>
+</tr>
+<tr>
+<td>Allow Rich Text Editing</td>
+<td>允许富文本编辑</td>
+</tr>
+</tbody></table>
+<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAER0iRpumeL9G-mBy3E3qr3W2bwd_ng2AACeSMAAud10VWPoEqCc6DL7ToE.png" alt="BQACAgUAAyEGAASHRsPbAAER0iRpumeL9G-mBy3E3qr3W2bwd_ng2AACeSMAAud10VWPoEqCc6DL7ToE.png"></p>
+<table>
+<thead>
+<tr>
+<th>On Value Changed（String）</th>
+<th>当数值变化时触发</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>On End Edit</td>
+<td>当编辑结束时触发</td>
+</tr>
+<tr>
+<td>On Select</td>
+<td>当选择时触发</td>
+</tr>
+<tr>
+<td>On Deselect</td>
+<td>当取消选择时触发</td>
+</tr>
+</tbody></table>
 </article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">‘祈止’</div><div class="post-copyright__author_desc">欢迎来到我的博客</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/')">unity之UGUI基础</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/img/post/common/wech.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/post/common/wech.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/post/common/wechi.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/post/common/wechi.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=unity之UGUI基础&amp;url=http://example.com/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
   var currentPageUrl = window.location.href;
   var input = document.createElement("input");
@@ -266,7 +925,7 @@ if (true) {
   input.setSelectionRange(0, 99999);
   document.execCommand("copy");
   document.body.removeChild(input);
-}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">‘祈止’</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/unity/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>unity<span class="tagsPageCount">5</span></a><a class="post-meta__box__tags" href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>技术， UGUI<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2026/02/10/unity6-Shaderlab%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">unity6 Shaderlab语法笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2026/02/10/unity6-Shaderlab%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/" title="unity6 Shaderlab语法笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-02-10</div><div class="title">unity6 Shaderlab语法笔记</div></div></a></div><div><a href="/2025/05/08/Unity%E5%BC%80%E5%8F%91inputSystem%E7%9A%84%E9%87%8D%E5%A4%8D%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" title="Unity开发inputSystem的重复注册问题的解决"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-05-08</div><div class="title">Unity开发inputSystem的重复注册问题的解决</div></div></a></div><div><a href="/2025/05/22/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF%E4%B9%8BManager/" title="胡闹厨房之Manager"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-05-22</div><div class="title">胡闹厨房之Manager</div></div></a></div><div><a href="/2025/05/01/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF%E4%B9%8BinputSystem/" title="胡闹厨房之inputSystem"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-05-01</div><div class="title">胡闹厨房之inputSystem</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Canvas"><span class="toc-number">1.</span> <span class="toc-text">Canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Rect-Transform"><span class="toc-number">1.1.</span> <span class="toc-text">Rect Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Anchors"><span class="toc-number">1.1.1.</span> <span class="toc-text">Anchors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base"><span class="toc-number">1.1.2.</span> <span class="toc-text">Base</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas-1"><span class="toc-number">1.2.</span> <span class="toc-text">Canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Render-Mode"><span class="toc-number">1.2.1.</span> <span class="toc-text">Render Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Additional-Shader-Channels"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Additional Shader Channels</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vertex-Color-Always-In-Gamma-Color-Space"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Vertex Color Always In Gamma Color Space</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/" title="unity之UGUI基础">unity之UGUI基础</a><time datetime="2026-02-24T05:14:33.000Z" title="发表于 2026-02-24 13:14:33">2026-02-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/10/unity6-Shaderlab%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/" title="unity6 Shaderlab语法笔记">unity6 Shaderlab语法笔记</a><time datetime="2026-02-10T11:22:21.000Z" title="发表于 2026-02-10 19:22:21">2026-02-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/30/CSharp%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%97%AD%E5%8C%85/" title="C#笔记——闭包">C#笔记——闭包</a><time datetime="2025-10-30T12:11:51.000Z" title="发表于 2025-10-30 20:11:51">2025-10-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/vscode%E9%93%BE%E6%8E%A5OpenCV/" title="vscode链接OpenCV">vscode链接OpenCV</a><time datetime="2025-07-28T09:16:40.000Z" title="发表于 2025-07-28 17:16:40">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/22/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF%E4%B9%8BManager/" title="胡闹厨房之Manager">胡闹厨房之Manager</a><time datetime="2025-05-22T07:06:11.000Z" title="发表于 2025-05-22 15:06:11">2025-05-22</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 - 2026 By <a class="footer-bar-link" href="/" title="‘祈止’" target="_blank">‘祈止’</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 文章</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><span> 关于</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C#<sup>4</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>4</sup></a><a href="/tags/mod/" style="font-size: 0.88rem;">mod<sup>4</sup></a><a href="/tags/shader/" style="font-size: 0.88rem;">shader<sup>1</sup></a><a href="/tags/unity/" style="font-size: 0.88rem;">unity<sup>5</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/" style="font-size: 0.88rem;">个人项目<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%83%B3/" style="font-size: 0.88rem;">学习感想<sup>1</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 0.88rem;">技术<sup>11</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" style="font-size: 0.88rem;">技术， UGUI<sup>1</sup></a><a href="/tags/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF/" style="font-size: 0.88rem;">胡闹厨房<sup>2</sup></a><a href="/tags/%E8%A7%84%E5%88%92/" style="font-size: 0.88rem;">规划<sup>1</sup></a><a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 0.88rem;">配置<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">‘祈止’</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/unity/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>unity<span class="tagsPageCount">5</span></a><a class="post-meta__box__tags" href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>技术， UGUI<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2026/02/10/unity6-Shaderlab%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">unity6 Shaderlab语法笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2025/05/08/Unity%E5%BC%80%E5%8F%91inputSystem%E7%9A%84%E9%87%8D%E5%A4%8D%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" title="Unity开发inputSystem的重复注册问题的解决"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-05-08</div><div class="title">Unity开发inputSystem的重复注册问题的解决</div></div></a></div><div><a href="/2026/02/10/unity6-Shaderlab%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/" title="unity6 Shaderlab语法笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-02-10</div><div class="title">unity6 Shaderlab语法笔记</div></div></a></div><div><a href="/2025/05/22/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF%E4%B9%8BManager/" title="胡闹厨房之Manager"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-05-22</div><div class="title">胡闹厨房之Manager</div></div></a></div><div><a href="/2025/05/01/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF%E4%B9%8BinputSystem/" title="胡闹厨房之inputSystem"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-05-01</div><div class="title">胡闹厨房之inputSystem</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Canvas"><span class="toc-number">1.</span> <span class="toc-text">Canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Rect-Transform"><span class="toc-number">1.1.</span> <span class="toc-text">Rect Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Anchors"><span class="toc-number">1.1.1.</span> <span class="toc-text">Anchors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base"><span class="toc-number">1.1.2.</span> <span class="toc-text">Base</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas-1"><span class="toc-number">1.2.</span> <span class="toc-text">Canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Render-Mode"><span class="toc-number">1.2.1.</span> <span class="toc-text">Render Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Additional-Shader-Channels"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Additional Shader Channels</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vertex-Color-Always-In-Gamma-Color-Space"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Vertex Color Always In Gamma Color Space</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas-Scaler"><span class="toc-number">1.3.</span> <span class="toc-text">Canvas Scaler</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UI-Scale-Mode"><span class="toc-number">1.3.1.</span> <span class="toc-text">UI Scale Mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Pixeis-Per-Unit"><span class="toc-number">1.3.2.</span> <span class="toc-text">Reference Pixeis Per Unit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Graphic-Raycaster"><span class="toc-number">1.4.</span> <span class="toc-text">Graphic Raycaster</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas-Renderer"><span class="toc-number">1.5.</span> <span class="toc-text">Canvas Renderer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">1.6.</span> <span class="toc-text">Image</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7"><span class="toc-number">1.6.1.</span> <span class="toc-text">基础属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%AE%E7%BD%A9%E4%B8%8E%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.6.2.</span> <span class="toc-text">遮罩与类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Text-Text-Mesh-Pro"><span class="toc-number">1.7.</span> <span class="toc-text">Text(Text Mesh Pro)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Text-Input"><span class="toc-number">1.7.1.</span> <span class="toc-text">Text Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-Settings"><span class="toc-number">1.7.2.</span> <span class="toc-text">Main Settings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Font"><span class="toc-number">1.7.3.</span> <span class="toc-text">Font</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color"><span class="toc-number">1.7.4.</span> <span class="toc-text">Color</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spacing"><span class="toc-number">1.7.5.</span> <span class="toc-text">Spacing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alignment-%E5%AF%B9%E9%BD%90"><span class="toc-number">1.7.6.</span> <span class="toc-text">Alignment(对齐)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Text-Wrapping-Mode%EF%BC%88%E6%96%87%E6%9C%AC%E6%8D%A2%E8%A1%8C%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="toc-number">1.7.7.</span> <span class="toc-text">Text Wrapping Mode（文本换行模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overflow-%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86"><span class="toc-number">1.7.8.</span> <span class="toc-text">Overflow(溢出处理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#H-V-Mapping-%E6%B0%B4%E5%B9%B3-%E5%9E%82%E7%9B%B4%E6%98%A0%E5%B0%84"><span class="toc-number">1.7.9.</span> <span class="toc-text">H&#x2F;V Mapping(水平&#x2F;垂直映射)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extra-Settings"><span class="toc-number">1.7.10.</span> <span class="toc-text">Extra Settings</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Toggle"><span class="toc-number">1.8.</span> <span class="toc-text">Toggle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Interactable"><span class="toc-number">1.8.1.</span> <span class="toc-text">Interactable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transition"><span class="toc-number">1.8.2.</span> <span class="toc-text">Transition</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Color-Tint"><span class="toc-number">1.8.2.1.</span> <span class="toc-text">Color Tint</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sprite-Swap"><span class="toc-number">1.8.2.2.</span> <span class="toc-text">Sprite Swap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Animation"><span class="toc-number">1.8.2.3.</span> <span class="toc-text">Animation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Navigation"><span class="toc-number">1.8.3.</span> <span class="toc-text">Navigation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Other"><span class="toc-number">1.8.4.</span> <span class="toc-text">Other</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Toggle-Group"><span class="toc-number">1.8.5.</span> <span class="toc-text">Toggle Group</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slider"><span class="toc-number">1.9.</span> <span class="toc-text">Slider</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scrollbar%EF%BC%88%E6%BB%9A%E5%8A%A8%E6%9D%A1%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">Scrollbar（滚动条）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scroll-View"><span class="toc-number">1.11.</span> <span class="toc-text">Scroll View</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Button"><span class="toc-number">1.12.</span> <span class="toc-text">Button</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dropdown%EF%BC%88%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%EF%BC%89"><span class="toc-number">1.13.</span> <span class="toc-text">Dropdown（下拉菜单）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#InputField"><span class="toc-number">1.14.</span> <span class="toc-text">InputField</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Text-Viewport"><span class="toc-number">1.14.1.</span> <span class="toc-text">Text Viewport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Text-Component"><span class="toc-number">1.14.2.</span> <span class="toc-text">Text Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Text"><span class="toc-number">1.14.3.</span> <span class="toc-text">Text</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Field-Settings"><span class="toc-number">1.14.4.</span> <span class="toc-text">Input Field Settings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Control-Settings"><span class="toc-number">1.14.5.</span> <span class="toc-text">Control Settings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Events"><span class="toc-number">1.14.6.</span> <span class="toc-text">Events</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/24/unity%E4%B9%8BUGUI%E5%9F%BA%E7%A1%80/" title="unity之UGUI基础">unity之UGUI基础</a><time datetime="2026-02-24T05:14:33.000Z" title="发表于 2026-02-24 13:14:33">2026-02-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/10/unity6-Shaderlab%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/" title="unity6 Shaderlab语法笔记">unity6 Shaderlab语法笔记</a><time datetime="2026-02-10T11:22:21.000Z" title="发表于 2026-02-10 19:22:21">2026-02-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/30/CSharp%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%97%AD%E5%8C%85/" title="C#笔记——闭包">C#笔记——闭包</a><time datetime="2025-10-30T12:11:51.000Z" title="发表于 2025-10-30 20:11:51">2025-10-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/vscode%E9%93%BE%E6%8E%A5OpenCV/" title="vscode链接OpenCV">vscode链接OpenCV</a><time datetime="2025-07-28T09:16:40.000Z" title="发表于 2025-07-28 17:16:40">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/22/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF%E4%B9%8BManager/" title="胡闹厨房之Manager">胡闹厨房之Manager</a><time datetime="2025-05-22T07:06:11.000Z" title="发表于 2025-05-22 15:06:11">2025-05-22</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 - 2026 By <a class="footer-bar-link" href="/" title="‘祈止’" target="_blank">‘祈止’</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 文章</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><span> 关于</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C#<sup>4</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>4</sup></a><a href="/tags/mod/" style="font-size: 0.88rem;">mod<sup>4</sup></a><a href="/tags/shader/" style="font-size: 0.88rem;">shader<sup>1</sup></a><a href="/tags/unity/" style="font-size: 0.88rem;">unity<sup>5</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/" style="font-size: 0.88rem;">个人项目<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%83%B3/" style="font-size: 0.88rem;">学习感想<sup>1</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 0.88rem;">技术<sup>11</sup></a><a href="/tags/%E6%8A%80%E6%9C%AF%EF%BC%8C-UGUI/" style="font-size: 0.88rem;">技术， UGUI<sup>1</sup></a><a href="/tags/%E8%83%A1%E9%97%B9%E5%8E%A8%E6%88%BF/" style="font-size: 0.88rem;">胡闹厨房<sup>2</sup></a><a href="/tags/%E8%A7%84%E5%88%92/" style="font-size: 0.88rem;">规划<sup>1</sup></a><a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 0.88rem;">配置<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
 var HoldLog = console.log;
 console.log = function () {};
 let now1 = new Date();
